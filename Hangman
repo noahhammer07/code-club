@@ -1,0 +1,36 @@
+
+import java.util.Arrays;
+import java.util.*;
+public class Hangman {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        Random r = new Random();
+
+        String value = "bruh";
+        String[] word = new String[value.length()];
+
+        for(int i = 0; i < word.length; i++){
+            word[i] = "" + value.charAt(i);
+        }
+
+        String [] guess =  new String[value.length()];
+
+        Arrays.fill(guess,"_");
+        int guessesLeft = 5;
+
+        while(guessesLeft < 0){
+            if (Arrays.toString(guess).equals(Arrays.toString(word))){
+                System.out.println("Congrats you guessed the word!");
+                break;
+            }
+            for(String a : guess){
+                System.out.println(a + " ");
+
+                System.out.println("Enter a letter pls");
+
+
+            }
+        }
+
+    }
+}
