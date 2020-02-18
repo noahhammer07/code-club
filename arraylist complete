@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class DeckOfCardsArrayList {
+    private ArrayList<Card> deck = new ArrayList<>();
+
+    public DeckOfCardsArrayList() {
+        for (int i = 1; i <= 4; i++)
+            for (int j = 1; j <= 13; j++)
+                deck.add(new Card(j, i));
+    }
+
+    public void shuffle()
+    {
+        Collections.shuffle(deck);
+    }
+
+    public Card dealCard()
+    {
+        return deck.remove(0);
+    }
+
+    public Card[] dealCards(int n)
+    {
+        if (deck.size() < n) n = deck.size() - 1;
+        Card[] cardsToReturn = new Card[n];
+        for (int i = 0; i < n; i++) cardsToReturn[i] = dealCard();
+
+        return cardsToReturn;
+    }
+
+    public int getNumberOfCardsRemaining() { return deck.size(); }
+
+    public String toString()
+    {
+        String s = "\n";
+        for(Card c : deck) s += c + "\n";
+        return s;
+    }
+}
