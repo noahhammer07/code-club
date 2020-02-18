@@ -1,0 +1,54 @@
+import java.util.Random;
+
+public class Card {
+
+    private int face;
+    private int suit;
+
+    public Card()
+    {
+        Random r = new Random();
+        face = r.nextInt(12) + 1;
+        suit = r.nextInt(3) + 1;
+//        face = (int)(Math.random()*12 + 1);
+//        suit = (int)(Math.random()*3 + 1);
+    }
+
+    public Card(int f, int s)
+    {
+        face = f;
+        suit = s;
+    }
+
+    public String toString()
+    {
+        String result = "";
+
+        if(face == 1)
+            result += "ACE";
+        else if(face == 11)
+            result += "JACK";
+        else if(face == 12)
+            result += "QUEEN";
+        else if(face == 13)
+            result += "KING";
+        else
+            result += face;
+
+        if(suit == 1)
+            result += " of Hearts";
+        else if(suit == 2)
+            result += " of Diamonds";
+        else if(suit == 3)
+            result += " of Clubs";
+        else if(suit == 4)
+            result += " of Spades";
+        else
+            result += suit;
+
+        return result;
+    }
+
+
+
+}
