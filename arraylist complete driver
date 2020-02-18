@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+
+public class DeckOfCardsArrayListDriver {
+    public static void main(String[] args) {
+        DeckOfCardsArrayList docal = new DeckOfCardsArrayList();
+        System.out.println("Here is a new deck of cards:  " + docal);
+        docal.shuffle();
+        System.out.println("Here is a shuffled version of the deck: " + docal);
+        Card[] hand = docal.dealCards(5);
+        System.out.println("Here are you're dealt cards: ");
+        for(Card c : hand) System.out.println(c);
+
+        System.out.println("\n" + "Number of Cards left in deck after shuffle: " + docal.getNumberOfCardsRemaining());
+    }
+}
