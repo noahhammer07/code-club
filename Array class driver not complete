@@ -1,0 +1,6 @@
+public class DeckOfCardsArrayDriver {
+    public static void main(String[] args) {
+        DeckOfCardsArray doca = new DeckOfCardsArray();
+        doca.printDeck();
+    }
+}
